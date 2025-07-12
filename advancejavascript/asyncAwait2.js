@@ -15,8 +15,13 @@ function commentData() {
 
  async function  GetBlogData  (){
     try {
-        const post  = await fetchPostData();
-        const comment  = await commentData();
+        // const post  = await fetchPostData();
+        // const comment  = await commentData();
+
+        const [  post , comment  ] = await Promise.all([
+            fetchPostData(),
+            commentData(),
+            ]);
         console.log(post, comment);
          
         
