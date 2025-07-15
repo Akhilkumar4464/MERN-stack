@@ -37,6 +37,17 @@
     })
  }
 
+ const removetask = (index)=>{
+    const tasks = loadTasks();
+    if (index < 1 || index > tasks.length) {
+        console.log('Invalid task number.');
+        return;
+      } 
+      tasks.splice(index - 1, 1); // Remove the task at the specified index
+         
+   }
+ 
+
  const command = process.argv[2];
  const argument = process.argv[3];
 
